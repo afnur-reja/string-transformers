@@ -10,6 +10,10 @@ A simple web app to convert text into different cases:
 - Kebab Case
 - Trim (no spaces)
 
+## 🔗 Live Demo
+
+[Click here to view the project](https://string-transformer-reja.netlify.app/)  
+
 ## 🔧 How to Use
 
 1. Type or paste text into the input box.

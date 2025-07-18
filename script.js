@@ -8,7 +8,7 @@ const kebabCase = document.getElementById('kebab-case')
 const trim = document.getElementById('trim')
 
 const toCamelCase = (value) => {
-     const wordArr = value.split(" ")
+     const wordArr = value.trim().toLowerCase().split(" ");
      if(wordArr.length === 1) {
         return value;
      }
@@ -25,7 +25,7 @@ const toCamelCase = (value) => {
 }
 
 const toPascalCase = (value) => {
-     const wordArr = value.split(" ")
+     const wordArr = value.trim().toLowerCase().split(" ");
      if(wordArr.length === 1) {
         return value.charAt(0).toUpperCase() + value.slice(1);
      }
@@ -41,21 +41,26 @@ const toPascalCase = (value) => {
 
 
 const toSnakeCase = (value) => {
-    return value.replaceAll(" ", "_")
+    return value.trim().replaceAll(" ", "_")
 }
 
 const toKebabCase = (value) => {
-    return value.replaceAll(" ", "-")
+    return value.trim().replaceAll(" ", "-")
 }
 
+const toTrim = (value) => {
+    return value.trim().replaceAll(" ", "")
+}
 
-input.addEventListener('input', () => {
+const transform = () => {
     lowerCase.innerHTML = input.value.toLowerCase();
     upperCase.innerHTML = input.value.toUpperCase()
-    console.log(toCamelCase(input.value))
     camelCase.innerHTML = toCamelCase(input.value)
     pascalCase.innerHTML = toPascalCase(input.value)
     snakeCase.innerHTML = toSnakeCase(input.value)
     kebabCase.innerHTML = toKebabCase(input.value)
-    trim.innerHTML = input.value.replaceAll(" ", '')
-})
+    trim.innerHTML = toTrim(input.value)
+}
+
+
+input.addEventListener('input', transform)
