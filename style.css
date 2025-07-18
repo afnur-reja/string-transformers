@@ -1,0 +1,97 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Input section */
+.input {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.input input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: 2px solid #7e57c2;
+  border-radius: 10px;
+  background-color: #f3e5f5;
+  color: #4a148c;
+  outline: none;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.input input:focus {
+  border-color: #5e35b1;
+  background-color: #ede7f6;
+}
+
+/* Transformers container — vertical stacking */
+.transformers {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each transformer box */
+.transformers > div {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(126, 87, 194, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.transformers > div:hover {
+  transform: translateY(-4px);
+}
+
+.transformers label {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #6a1b9a;
+  margin-bottom: 8px;
+}
+
+.transformers span {
+  display: block;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f8faff;
+  padding: 15px;
+  border-radius: 8px;
+  word-wrap: break-word;
+  border-left: 4px solid #7e57c2;
+}
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .input input {
+    padding: 12px 14px;
+  }
+
+  .transformers span {
+    font-size: 0.95rem;
+  }
+}
